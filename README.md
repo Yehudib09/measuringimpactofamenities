@@ -16,20 +16,20 @@ We scrapped the following data from the 18 listed hotels in Mountain View on Sun
 3.	Total number of amenities listed and type (e.g. pool, gym)
 
 
-###Data Preparation 
+### Data Preparation 
 -	To regress amenities on rating score and number of reviews, each amenity was given its own column. Hotels with an amenity were given 1s and hotels without an amenity were given 0s in the amenity’s respective column. 
 Modeling
 -	First, a linear regression is used to predict the number of reviews using type of amenities offered. It is reasonable to assume that offering or not offering certain amenities might motivate guests to write reviews. Indeed, we observe that many reviews written center around service, quality, and/or presence of an amenity. Because we have more covariates (i.e. amenities) than observations, stepwise feature selection was employed to select the most important variables. 
 -	Next, a multinomial logistic regression—since ratings are categorical—is used to predict ratings using type of amenities offered. 
  
-###Impact of Amenities on Reviews 
+### Impact of Amenities on Reviews 
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The linear regression output above shows the impact of certain amenities (chosen using stepwise feature selection) on number of reviews. Of the amenities listed, meeting rooms is statistically significant at a 5% level and laundry service is statistically significant at 10% level.
 Impact of Amenities on Ratings 
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Above, we display the output of the multinomial logistic regression, including coefficients and p-values, which displays the impact that certain amenities have on the likelihood that a hotel received a certain rating. The coefficients represent the marginal impact of an amenity on the logit of outcome relative to the referent group, which we set as 3.5, the current compositive rating of Crest View. For example, adding a meeting room increases that chances that a hotel has a 4-star rating vs a 3.5-star rating. We note, however, that none of our coefficients is statistically significant. 
 
-###Recommendation 
+### Recommendation 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We identify “meeting rooms” as an important amenity, given its impact on number of reviews. Crest View does not currently offer meeting rooms. 
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To evaluate the value of a meeting room at Crest view, we compare the benefit to the costs. To estimate the benefit, we measure how much the probability of purchase would change as we increase reviews through the introduction of meeting rooms. From our linear regression, we see that adding a meeting room would increase reviews by 322, on average, holding all else constant. This corresponds to a .805 change in the logit, or 5% additional market share for Crest View. 
@@ -41,7 +41,7 @@ New Market Share	10.5%
 New customers gained	(.105-.05)*500,000=27,500
 Increase in Market Share from offering “Meeting Rooms”
  
-Total Value of New Customers Gained
+### Total Value of New Customers Gained
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we compare the $12.5M in incremental value to the estimated $1M in costs (finding cost estimates for adding a meeting room to a hotel is extremely difficult so we took 1/22 of the overall price of constructing a hotel), we would recommend that Crest View offer meeting rooms in its hotel to increase market share and profitability. This is consistent with Crest View’s strategy to cater more to the business segment, having introduce a brand new business center in early spring 2019. If you read through Crest Views review, you will notice that a number of reviews mention Crest View’s business focused amenities—or lack of.
 
