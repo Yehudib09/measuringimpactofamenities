@@ -23,23 +23,46 @@ Modeling
 -	Next, a multinomial logistic regression—since ratings are categorical—is used to predict ratings using type of amenities offered. 
  
 ### Impact of Amenities on Reviews 
+
+Inline-style: 
+![alt text](https://raw.githubusercontent.com/Yehudib09/measuringimpactofamenities/master/regression%20output%20.jpg "Regression Output")
+
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The linear regression output above shows the impact of certain amenities (chosen using stepwise feature selection) on number of reviews. Of the amenities listed, meeting rooms is statistically significant at a 5% level and laundry service is statistically significant at 10% level.
 Impact of Amenities on Ratings 
+ 
+ 
+Inline-style: 
+![alt text]https://raw.githubusercontent.com/Yehudib09/measuringimpactofamenities/master/multinomial%20regression%20output.PNG "MR Output") 
+ 
  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Above, we display the output of the multinomial logistic regression, including coefficients and p-values, which displays the impact that certain amenities have on the likelihood that a hotel received a certain rating. The coefficients represent the marginal impact of an amenity on the logit of outcome relative to the referent group, which we set as 3.5, the current compositive rating of Crest View. For example, adding a meeting room increases that chances that a hotel has a 4-star rating vs a 3.5-star rating. We note, however, that none of our coefficients is statistically significant. 
 
 ### Recommendation 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We identify “meeting rooms” as an important amenity, given its impact on number of reviews. Crest View does not currently offer meeting rooms. 
+
+Inline-style: 
+![alt text]https://raw.githubusercontent.com/Yehudib09/measuringimpactofamenities/master/regression%20equation.png "Regression Equation") 
+
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To evaluate the value of a meeting room at Crest view, we compare the benefit to the costs. To estimate the benefit, we measure how much the probability of purchase would change as we increase reviews through the introduction of meeting rooms. From our linear regression, we see that adding a meeting room would increase reviews by 322, on average, holding all else constant. This corresponds to a .805 change in the logit, or 5% additional market share for Crest View. 
-Current market share	5%
-Implied logit	-2.945
-Change in Logit	.805
-New Implied Logit	-2.14
-New Market Share	10.5%
-New customers gained	(.105-.05)*500,000=27,500
-Increase in Market Share from offering “Meeting Rooms”
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To evaluate the value of a meeting room at Crest view, we compare the benefit to the costs. To estimate the benefit, we measure how much the probability of purchase would change as we increase reviews through the introduction of meeting rooms. From our linear regression, we see that adding a meeting room would increase reviews by 322, on average, holding all else constant. This corresponds to a .805 change in the logit, or 5% additional market share for Crest View.
+
+
+| Current Market Share  | 5%                        | 
+| -------------         |:-------------:            | 
+| Implied logit         | -2.945                    |
+|change in Logit        | .805                      |  
+| New Implied Logit     | -2.14                     |    
+| New Market Share      | 10.5%                     |    
+| New Customers Gained  | (.105-.05)*500,000=27,500 |    
+
+Inline-style: 
+![alt text]https://raw.githubusercontent.com/Yehudib09/measuringimpactofamenities/master/CLV%20framework.png "MR Output") 
+ 
+ 
+ Inline-style: 
+![alt text]https://raw.githubusercontent.com/Yehudib09/measuringimpactofamenities/master/CLV%20calculation.png "MR Output") 
+ 
  
 ### Total Value of New Customers Gained
  
